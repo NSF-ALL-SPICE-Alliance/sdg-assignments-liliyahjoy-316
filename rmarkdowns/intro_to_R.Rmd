@@ -1,3 +1,13 @@
+
+```{r}
+install.packages("tidyverse")
+```
+```{r}
+system.file(package = "tidyverse")
+```
+
+
+
 ---
 title: "Welcome to R!"
 author: "Victoria DelaCruz | Connor Flynn"
@@ -36,6 +46,16 @@ One of the most helpful tools to an R programmer are R packages! In a nutshell, 
 ```{r}
 library()
 ```
+
+```{r}
+library(tidyverse)
+```
+```{r}
+library(here)
+
+library(janitor)
+```
+
 
 A new window should have opened up with a list of packages and a short description! 
 
@@ -112,6 +132,8 @@ Create a my_name variable with your name assigned to the variable instead of "Vi
 my_name <- "Liliyah"
 
 my_age = 20
+
+my_age + 5 
 ```
 
 
@@ -158,6 +180,10 @@ If you want to remove or delete a variable, you can run the following code:
 
 ```{r}
 rm(my_name) # input the variable name in the parenthesis
+```
+```{r}
+rm(my_name)
+
 ```
 
 #### Variables Best Practices
@@ -212,9 +238,17 @@ In the code chunk below, we use the `read_csv()` function to read in the csv fil
 sdr_data <- read_csv(here("data/SDR-2023-Data.csv")) # assigning the dataset to a variable so that we can look at/reference it
 # to view the whole dataset you can click on sdr_data in your environment pane at the top right of your screen)
 ```
+```{r} 
+sdr_data <- read_csv(here("data/SDR-2023-Data.csv"))
+```
+
 Cleaning names
 ```{r}
 sdr_data <- clean_names(sdr_data) # cleaning column names 
+```
+
+```{r}
+sdr_data <- clean_names(sdr_data) 
 ```
 
 Note: In programming, we don't use spaces in names (usually, if you want to use a space between words, you'd use an underscore, slash, or other punctuation). That's why we used the `clean_names` function from the `janitor` package, to clean our column names and replace spaces with underscores.
@@ -301,6 +335,11 @@ What if we want to subset specific rows? We can do this by using the filter func
 #### <span style="color: red;">Challenge 2</span>
 Using the `select()` function, select two new SDG goal scores. Assign it to a variable named `SDG_scores`. 
 
+```{r}
+SDG_scores <- sdr_data %>% 
+  select(goal_1_score, goal_5_score)
+```
+
 *2. filter()*
 
 Similarly to select, `filter()` can be used to extract specific rows. Let's try this out by filtering our data for those within the Oceania region.
@@ -310,6 +349,10 @@ In order to do this, we write out the column name "regions_used_for_the_sdr" fol
 ```{r}
 sdr_data %>% 
   filter(regions_used_for_the_sdr == "Oceania")
+```
+```{r}
+sdr_data %>% 
+  filter(SDG_scores )
 ```
 
 Notes: 
