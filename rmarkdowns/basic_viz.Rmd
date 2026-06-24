@@ -157,7 +157,7 @@ A bar chart is great for comparing a numeric variable by group.
   - In this case, let's try to compare our numeric variable (SDG 3 Scores) by group (country)
 
 ```{r}
-ggplot(sdr_data, aes(x= goal_3_score, y = country)) +
+ggplot(sdr_data, aes(x= goal_3_score, y = country)) +.    
   geom_bar(stat = "identity")
 ```
 
