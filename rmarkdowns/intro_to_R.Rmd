@@ -351,8 +351,8 @@ sdr_data %>%
   filter(regions_used_for_the_sdr == "Oceania")
 ```
 ```{r}
-sdr_data %>% 
-  filter(SDG_scores )
+new_region <- sdr_data %>% 
+  filter(regions_used_for_the_sdr == "MENA")
 ```
 
 Notes: 
