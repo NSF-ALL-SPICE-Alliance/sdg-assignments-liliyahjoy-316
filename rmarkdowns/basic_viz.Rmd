@@ -131,6 +131,21 @@ Cool! It seems that the darkest blue points (countries with the lowest SDG 5 sco
 #### <span style="color: red;">Challenge 1</span>
 Create a scatterplot using two different SDG scores. Then, color the points by using a third SDG score. In a couple of sentences, describe what you see.
 
+```{r}
+ggplot(data = sdr_data, aes(x= goal_1_score, y=goal_10_score)) +
+  geom_point()
+```
+```{r}
+ggplot(data = sdr_data, aes(x= goal_1_score, y = goal_10_score, color = goal_7_score)) +
+  geom_point()
+```
+
+
+Interpretation:
+You can see that in the dense cluster of countries in the top right hand quadrant show that those who have successfully dealt with poverty(SDG1). That cluster also has many light blue shades (SDG7) which indicates high energy scores. From that you can tell the country's poverty and energy usage go hand in hand. 
+
+In the lower left quadrant you can see a spread of countries who aren't as successful in dealing with poverty and reducing inequalities (SDG10). In addition, their dark color also indicate that the also exhibit low clean energy scores.
+
 ### Bar Chart
 
 When should we use a **bar chart**?
