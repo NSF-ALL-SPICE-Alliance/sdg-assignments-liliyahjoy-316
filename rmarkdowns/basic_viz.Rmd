@@ -138,6 +138,8 @@ ggplot(data = sdr_data, aes(x= goal_1_score, y=goal_10_score)) +
 ```{r}
 ggplot(data = sdr_data, aes(x= goal_1_score, y = goal_10_score, color = goal_7_score)) +
   geom_point()
+
+
 ```
 
 
